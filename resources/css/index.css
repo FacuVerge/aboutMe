@@ -5,7 +5,10 @@
 
 /* Nav CSS */
 body {
-  	background-color: #749472;
+	display: flex;
+	flex-direction: column;
+  	background-color: #8bbcd3;
+	color: #3c7aa1;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	font-size: 1em;
@@ -16,14 +19,21 @@ body {
 nav {
 	width: 100vw;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	height: 10vh;
-	background-color: #506e47;
+	background-color: #3c7aa1;
+	color: #8bbcd3;
 	align-items: center;
+	border-bottom: 2px solid #245675;
+}
+
+.title {
+	padding-left: 2em !important;
 }
 
 ul {
   	display: flex;
+	padding-right: 2em !important;
 }
 
 li {
@@ -34,41 +44,54 @@ a {
   	text-decoration: none;
 }
 
+/* Borders CSS */
+
+section.about {
+	border-right: 2px solid #245675;
+	border-bottom: 2px solid #245675;
+}
+
+section.skills {
+	border-left: 2px solid #245675;
+	border-bottom: 2px solid #245675;
+}
+
+section.education {
+	border-top: 2px solid #245675;
+	border-left: 2px solid #245675;
+}
+
+section.contact {
+	border-right: 2px solid #245675;
+	border-top: 2px solid #245675;
+}
 
 /* Grid CSS */ 
 .content {
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    height: 90vh;
-	width: 100vw;
-}
-  
-.container {
     display: grid;
     grid-template-columns: repeat(4, 25vw);
-    grid-template-rows: repeat(4, 20vh);
+    grid-template-rows: repeat(4, 22.5vh);
+	height: 90vh;
+	width: 100vw;
 }
 
 
 /* About Section CSS */
 .about {
 	display: grid;
-	grid-template-columns: repeat(2, 20vw);
-    grid-template-rows: repeat(2, 20vh);
+	grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
 	grid-column: 1/3;
 	grid-row: 1/3;
-	border-right: 1px solid black;
-	border-bottom: 1px solid black;
 	opacity: 0.05;
 	transition: opacity 1s;
-	justify-content: center;
+	padding: 7px !important;
 }
 
 .about .text {
 	grid-column: 1/2;
 	grid-row: 1/3;
-	text-align: justify;
+	text-align: right;
 	align-self: center;
 	margin-block-start: unset;
 	margin-block-end: unset;
@@ -80,11 +103,7 @@ a {
 	grid-row: 1/2;
 	justify-content: center;
 	object-fit: cover;
-}
-
-.about .image-self img {
-	display: block;
-	object-fit: cover;
+	clip-path: circle(25%);
 }
 
 .about .image-icon {
@@ -105,28 +124,26 @@ a {
 /* Skills Section CSS */
 .skills {
 	display: grid;
-	grid-template-columns: repeat(2, 20vw);
-    grid-template-rows: repeat(2, 20vh);
+	grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
 	grid-column: 3/5;
 	grid-row: 1/3;
-	border-left: 1px solid black;
-	border-bottom: 1px solid black;
 	opacity: 0.05;
-	justify-content: center;
+	padding: 7px !important;
 }
 
 .skills .text-one {
 	grid-column: 1/3;
 	grid-row: 1/2;
-	text-align: justify;
+	text-align: center;
 	align-self: center;
 }
 
 .skills .text-two {
 	grid-column: 2/3;
 	grid-row: 2/3;
-	text-align: justify;
-	align-self: center;
+	text-align: left;
+	align-self: top;
 }
 
 .skills .image-icon {
@@ -140,7 +157,6 @@ a {
 .skills:hover {
 	opacity: unset;
 	transition: opacity 1s;
-	border-left: 1px solid black;
 }
 
 
@@ -148,20 +164,18 @@ a {
 /* Education Section CSS */
 .education {
 	display: grid;
-	grid-template-columns: repeat(2, 20vw);
-    grid-template-rows: repeat(2, 20vh);
+	grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
 	grid-column: 3/5;
 	grid-row: 3/5;
 	opacity: 0.05;
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-	justify-content: center;
+	padding: 7px !important;
 }
 
 .education .text-one {
 	grid-column: 2/3;
 	grid-row: 1/2;
-	text-align: justify;
+	text-align: left;
 	align-self: center;
 }
 
@@ -169,7 +183,7 @@ a {
 	grid-column: 1/3;
 	grid-row: 2/3;
 	text-align: center;
-	align-self: center;
+	align-self: top;
 }
 
 .education .image-icon {
@@ -188,20 +202,18 @@ a {
 /* Contact Section CSS */
 .contact {
 	display: grid;
-	grid-template-columns: repeat(2, 20vw);
-    grid-template-rows: repeat(2, 20vh);
+	grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
 	grid-column: 1/3;
 	grid-row: 3/5;
-	border-right: 1px solid black;
-	border-top: 1px solid black;
 	opacity: 0.05;
-	justify-content: center;
+	padding: 7px !important;
 }
 
 .contact .text-one {
 	grid-column: 1/2;
 	grid-row: 1/2;
-	text-align: justify;
+	text-align: right;
 	align-self: center;
 }
 
@@ -209,7 +221,7 @@ a {
 	grid-column: 1/3;
 	grid-row: 2/3;
 	text-align: center;
-	align-self: center;
+	align-self: top;
 }
 
 .contact .image-icon {
